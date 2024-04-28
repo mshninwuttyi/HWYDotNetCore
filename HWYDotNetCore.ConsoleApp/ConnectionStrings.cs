@@ -14,9 +14,10 @@ namespace HWYDotNetCore.ConsoleApp
             DataSource = "HNINWUTTYI\\MSSQLSERVER2012",
             InitialCatalog = "HWYDotNetCore",
             UserID = "sa",
-            Password = "admin123!"
-,
+            Password = "admin123!",
+            TrustServerCertificate = true,
         };
 
     }
 }
+ 

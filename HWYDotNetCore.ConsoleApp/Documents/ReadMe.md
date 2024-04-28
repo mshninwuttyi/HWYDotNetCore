@@ -1,0 +1,1 @@
+ Scaffold-DbContext "Server=HNINWUTTYI\MSSQLSERVER2012; Database=HWYDotNetCore; User ID = sa; Password=admin123!; TrustServerCertificate=True; Trusted _Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context HWYDotNetCoreDbContext

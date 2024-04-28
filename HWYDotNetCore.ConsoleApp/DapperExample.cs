@@ -81,7 +81,7 @@ namespace HWYDotNetCore.ConsoleApp
         {
             var item = new BlogDto
             {
-                BlogId = id,
+               
                 BlogTitle = title,
                 BlogAuthor = author,
                 BlogContent = content,
