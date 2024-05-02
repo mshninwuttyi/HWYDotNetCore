@@ -1,13 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HWYDotNetCore.ConsoleApp.Dtos;
+using HWYDotNetCore.ConsoleApp.Services;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HWYDotNetCore.ConsoleApp
+namespace HWYDotNetCore.ConsoleApp.EFCoreExamples
 {
-    internal class AppDbContext:DbContext
+    internal class AppDbContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

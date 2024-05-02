@@ -1,4 +1,6 @@
 ﻿using Dapper;
+using HWYDotNetCore.ConsoleApp.Dtos;
+using HWYDotNetCore.ConsoleApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,11 +10,12 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HWYDotNetCore.ConsoleApp
+namespace HWYDotNetCore.ConsoleApp.DapperExamples
 {
     internal class DapperExample
     {
-        public void Run() {
+        public void Run()
+        {
             //Read();
             //Edit(1);
             //Edit(15);
@@ -22,9 +25,9 @@ namespace HWYDotNetCore.ConsoleApp
 
         }
 
-        private void Read() 
+        private void Read()
         {
-        using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
+            using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
             List<BlogDto> lst = db.Query<BlogDto>("select * from tbl_blog").ToList();
             foreach (BlogDto item in lst)
             {
@@ -77,11 +80,11 @@ namespace HWYDotNetCore.ConsoleApp
             Console.WriteLine(message);
         }
 
-        private void Update(int id,  string title, string author, string content)
+        private void Update(int id, string title, string author, string content)
         {
             var item = new BlogDto
             {
-               
+
                 BlogTitle = title,
                 BlogAuthor = author,
                 BlogContent = content,

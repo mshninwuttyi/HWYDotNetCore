@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection.Metadata;
 
-namespace HWYDotNetCore.ConsoleApp
+namespace HWYDotNetCore.ConsoleApp.AdoDotNetExamples
 {
     internal class AdoDotNetExample
     {
@@ -18,7 +18,7 @@ namespace HWYDotNetCore.ConsoleApp
             UserID = "sa",
             Password = "admin123!"
         };
-  
+
 
         public void Read()
         {
@@ -26,7 +26,7 @@ namespace HWYDotNetCore.ConsoleApp
             connection.Open();
             Console.WriteLine("Connection Open");
 
-            String query = "select * from tbl_blog";
+            string query = "select * from tbl_blog";
             SqlCommand cmd = new SqlCommand(query, connection);
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -45,13 +45,13 @@ namespace HWYDotNetCore.ConsoleApp
             }
         }
 
-        public void Edit(int id )
+        public void Edit(int id)
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
             Console.WriteLine("Connection Open");
 
-            String query = "select * from tbl_blog where BlogId = @BlogId";
+            string query = "select * from tbl_blog where BlogId = @BlogId";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@BlogId", id);
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
@@ -61,18 +61,18 @@ namespace HWYDotNetCore.ConsoleApp
             connection.Close();
             Console.WriteLine("Connection Close");
 
-            if(dt.Rows.Count == 0)
+            if (dt.Rows.Count == 0)
             {
                 Console.WriteLine("No data found.");
                 return;
             }
 
-                DataRow dr = dt.Rows[0];    
-                Console.WriteLine("Blog Id => " + dr["BlogId"]);
-                Console.WriteLine("Blog Title => " + dr["BlogTitle"]);
-                Console.WriteLine("Blog Author => " + dr["BlogAuthor"]);
-                Console.WriteLine("Blog Content => " + dr["BlogContent"]);
-                Console.WriteLine("----------------------------------------------");
+            DataRow dr = dt.Rows[0];
+            Console.WriteLine("Blog Id => " + dr["BlogId"]);
+            Console.WriteLine("Blog Title => " + dr["BlogTitle"]);
+            Console.WriteLine("Blog Author => " + dr["BlogAuthor"]);
+            Console.WriteLine("Blog Content => " + dr["BlogContent"]);
+            Console.WriteLine("----------------------------------------------");
         }
 
         public void Create(string title, string author, string content)
@@ -92,7 +92,7 @@ namespace HWYDotNetCore.ConsoleApp
             cmd.Parameters.AddWithValue("@BlogTitle", title);
             cmd.Parameters.AddWithValue("@BlogAuthor", author);
             cmd.Parameters.AddWithValue("@BlogContent", content);
-            int result = cmd.ExecuteNonQuery(); 
+            int result = cmd.ExecuteNonQuery();
 
             connection.Close();
 
