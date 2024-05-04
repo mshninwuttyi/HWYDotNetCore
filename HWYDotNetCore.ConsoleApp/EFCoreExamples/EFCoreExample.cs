@@ -17,7 +17,7 @@ namespace HWYDotNetCore.ConsoleApp.EFCoreExamples
             //Edit(1003);
             //Create("EF title", "EF author", "EF content");
             //Update(1004, "EF title 2", "EF author 2", "EF content 2");
-            Delete(1004);
+            Delete(1);
         }
 
         private void Read()
