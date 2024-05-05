@@ -1,15 +1,14 @@
-﻿using HWYDotNetCore.ConsoleApp.Dtos;
-using HWYDotNetCore.ConsoleApp.Services;
+﻿using HWYDotNetCore.RestApi.Models;
 using Microsoft.EntityFrameworkCore;
+using HWYDotNetCore.RestApi;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
-namespace HWYDotNetCore.ConsoleApp.EFCoreExamples
+namespace HWYDotNetCore.RestApi.Database
 {
     internal class AppDbContext : DbContext
     {
@@ -17,11 +16,7 @@ namespace HWYDotNetCore.ConsoleApp.EFCoreExamples
         {
             optionsBuilder.UseSqlServer(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
         }
-        [Key]
-        public Guid BlogId
-        {
-            get { return BlogId; }
-        }
-        public DbSet<BlogDto> Blogs { get; set; }
+
+        public DbSet<BlogModel> Blogs { get; set; }
     }
 }
