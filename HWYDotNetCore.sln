@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.ConsoleApp", "HWYDotNetCore.ConsoleApp\HWYDotNetCore.ConsoleApp.csproj", "{CD14318C-A012-445C-968B-071105EE7EA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWYDotNetCore.RestApi", "HWYDotNetCore.RestApi\HWYDotNetCore.RestApi.csproj", "{BDAD65F3-CB5A-4081-88EB-544AA5BF0EAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.RestApi", "HWYDotNetCore.RestApi\HWYDotNetCore.RestApi.csproj", "{BDAD65F3-CB5A-4081-88EB-544AA5BF0EAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWYDotNetCore.Shared", "HWYDotNetCore.Shared\HWYDotNetCore.Shared.csproj", "{F5B492CD-41DB-4ED0-84E7-307078B707C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BDAD65F3-CB5A-4081-88EB-544AA5BF0EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDAD65F3-CB5A-4081-88EB-544AA5BF0EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDAD65F3-CB5A-4081-88EB-544AA5BF0EAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5B492CD-41DB-4ED0-84E7-307078B707C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5B492CD-41DB-4ED0-84E7-307078B707C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5B492CD-41DB-4ED0-84E7-307078B707C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5B492CD-41DB-4ED0-84E7-307078B707C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
