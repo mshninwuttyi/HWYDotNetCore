@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.RestApi", "HW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.Shared", "HWYDotNetCore.Shared\HWYDotNetCore.Shared.csproj", "{F5B492CD-41DB-4ED0-84E7-307078B707C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWYDotNetCore.RestApiWithNLayer", "HWYDotNetCore.RestApiWithNLayer\HWYDotNetCore.RestApiWithNLayer.csproj", "{6874CFAC-510A-4AD7-9165-7AA2F40084BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.RestApiWithNLayer", "HWYDotNetCore.RestApiWithNLayer\HWYDotNetCore.RestApiWithNLayer.csproj", "{6874CFAC-510A-4AD7-9165-7AA2F40084BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWYDotNetCore.ConsoleAppHttpClient", "HWYDotNetCore.ConsoleAppHttpClient\HWYDotNetCore.ConsoleAppHttpClient.csproj", "{F73E0120-6D4C-4193-A500-A2BA1A3748D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{6874CFAC-510A-4AD7-9165-7AA2F40084BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6874CFAC-510A-4AD7-9165-7AA2F40084BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6874CFAC-510A-4AD7-9165-7AA2F40084BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F73E0120-6D4C-4193-A500-A2BA1A3748D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F73E0120-6D4C-4193-A500-A2BA1A3748D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F73E0120-6D4C-4193-A500-A2BA1A3748D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F73E0120-6D4C-4193-A500-A2BA1A3748D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
