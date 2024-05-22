@@ -56,7 +56,7 @@ namespace HWYDotNetCore.RestApi.Controllers
             item.BlogContent = blog.BlogContent;
             var result = _context.SaveChanges();
             string message = result > 0 ? "Updating Successful." : "Updating Failed.";
-            return Ok("Update"); 
+            return Ok(message); 
         }
 
         [HttpPatch]
@@ -85,7 +85,7 @@ namespace HWYDotNetCore.RestApi.Controllers
                   
             var result = _context.SaveChanges();
             string message = result > 0 ? "Updating Successful." : "Updating Failed.";
-            return Ok("Update");
+            return Ok(message);
         }
 
         [HttpDelete("{id}")]
