@@ -16,11 +16,16 @@ namespace HWYDotNetCore.RestApiWithNLayer.Features.MyanmarMonths
             return model;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Get()
+        [HttpGet("MonthNames")]
+        public async Task<IActionResult> GetMonths()
         {
             var model = await GetDataFromJsonData();
-            return Ok(model.Tbl_Months);
+            var result = model.Tbl_Months;
+            List<MonthNames> lst = result.Select(x => new MonthNames
+            {
+                MonthMm = x.MonthMm
+            }).ToList();
+            return Ok(lst);
         }
 
         [HttpGet("{id}")]
@@ -46,5 +51,10 @@ namespace HWYDotNetCore.RestApiWithNLayer.Features.MyanmarMonths
         public string FestivalEn { get; set; }
         public string Description { get; set; }
         public string Detail { get; set; }
+    }
+
+    public class MonthNames
+    {
+        public string MonthMm { get; set; }
     }
 }
