@@ -18,8 +18,11 @@ internal class RestClientExample
     public async Task RunAsync()
     {
         //await ReadAsync();
-        await EditAsync(8);
-        await EditAsync(100);
+        //await EditAsync(8);
+        //await EditAsync(100);
+        //await CreateAsync("TestTitle", "TestAuthor", "TestContent");
+        await UpdateAsync(10,"TestTitle", "TestAuthor", "TestContent");
+        //await DeleteAsync(8);
     }
     private async Task ReadAsync()
     {

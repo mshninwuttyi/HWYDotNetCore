@@ -40,6 +40,8 @@ namespace HWYDotNetCore.RestApiWithNLayer.Features.MyanmarMonths
     public class Rootobject
     {
         public Tbl_Months[] Tbl_Months { get; set; }
+
+        //public List<Tbl_Months> Tbl_Months { get; set; }
     }
 
     public class Tbl_Months

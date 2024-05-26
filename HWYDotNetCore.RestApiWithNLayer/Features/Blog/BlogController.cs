@@ -42,7 +42,7 @@ namespace HWYDotNetCore.RestApiWithNLayer.Features.Blog
             return Ok(message);
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public IActionResult Update(int id, BlogModel blog)
         {
             var item = _bl_blog.GetBlog(id);
