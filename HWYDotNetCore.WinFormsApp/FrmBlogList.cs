@@ -26,23 +26,13 @@ namespace HWYDotNetCore.WinFormsApp
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            #region If Case
             //int columnIndex = e.ColumnIndex;
             //int rowIndex = e.RowIndex;
             if (e.RowIndex == -1) return;
             var blogId = Convert.ToInt32(dgvData.Rows[e.RowIndex].Cells["ColId"].Value);
 
-            if (e.ColumnIndex == (int)EnumFormControlType.Edit)
-            {
-                FrmBlog frm = new FrmBlog(blogId);
-                frm.ShowDialog();
-                BlogList();
-            }
-            else if (e.ColumnIndex == (int)EnumFormControlType.Delete)
-            {
-                var dialogResult = MessageBox.Show("Are you sure want to delete?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult != DialogResult.Yes) return;
-                DeleteBlog(blogId);
-            }
+           
 
             //EnumFormControlType enumFormControlType = EnumFormControlType.None;
             //switch(enumFormControlType)
@@ -67,6 +57,30 @@ namespace HWYDotNetCore.WinFormsApp
             //    default:
             //        break;
             //}
+            #endregion
+
+            #region Switch Case
+            int index = e.ColumnIndex;
+            EnumFormControlType enumFormControlType = (EnumFormControlType)index;
+            switch (enumFormControlType)
+            {
+                case EnumFormControlType.Edit:
+                    FrmBlog frm = new FrmBlog(blogId);
+                    frm.ShowDialog();
+                    BlogList();
+                    break;
+                case EnumFormControlType.Delete:
+                    var dialogResult = MessageBox.Show("Are you sure want to delete?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult != DialogResult.Yes) return;
+                    DeleteBlog(blogId);
+                    break;
+                case EnumFormControlType.None:
+                default:
+                    MessageBox.Show("Invalid Case");
+                    break;
+            }
+
+            #endregion 
         }
 
         private void FrmBlogList_Load(object sender, EventArgs e)
