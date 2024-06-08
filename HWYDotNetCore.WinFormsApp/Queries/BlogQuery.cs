@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,5 +17,11 @@ namespace HWYDotNetCore.WinFormsApp.Queries
              (@BlogTitle
              ,@BlogAuthor
              ,@BlogContent)";
+
+        public static string BlogList { get; } = @"SELECT [BlogId]
+            ,[BlogTitle]
+            ,[BlogAuthor]
+            ,[BlogContent]
+        FROM [dbo].[Tbl_Blog]";
     }
 }
