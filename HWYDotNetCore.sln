@@ -19,9 +19,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.ConsoleAppRes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.PizzaApi", "HWYDotNetCore.PizzaApi\HWYDotNetCore.PizzaApi.csproj", "{76ACA769-566E-4AD1-8361-697A5DDE4FED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWYDotNetCore.ConsoleAppRefitExamples", "HWYDotNetCore.ConsoleAppRefitExamples\HWYDotNetCore.ConsoleAppRefitExamples.csproj", "{9BDE918C-7CC8-446B-829D-F771159C1A30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.ConsoleAppRefitExamples", "HWYDotNetCore.ConsoleAppRefitExamples\HWYDotNetCore.ConsoleAppRefitExamples.csproj", "{9BDE918C-7CC8-446B-829D-F771159C1A30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWYDotNetCore.WinFormsApp", "HWYDotNetCore.WinFormsApp\HWYDotNetCore.WinFormsApp.csproj", "{9230E71E-7FB8-425A-A5EB-38E0DF426C9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.WinFormsApp", "HWYDotNetCore.WinFormsApp\HWYDotNetCore.WinFormsApp.csproj", "{9230E71E-7FB8-425A-A5EB-38E0DF426C9D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.NLayer.UI", "HWYDotNetCore.NLayer.UI\HWYDotNetCore.NLayer.UI.csproj", "{95F38E9F-8CF2-4C0D-A7BD-B355CAFC3F81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWYDotNetCore.NLayer.DataAccess", "HWYDotNetCore.NLayer.DataAccess\HWYDotNetCore.NLayer.DataAccess.csproj", "{47152548-A9EB-4114-99A9-3E8A33DF3DB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWYDotNetCore.NLayer.BusinessLogic", "HWYDotNetCore.NLayer.BusinessLogic\HWYDotNetCore.NLayer.BusinessLogic.csproj", "{D78F4268-AFE0-4595-8D74-434767924946}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +75,18 @@ Global
 		{9230E71E-7FB8-425A-A5EB-38E0DF426C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9230E71E-7FB8-425A-A5EB-38E0DF426C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9230E71E-7FB8-425A-A5EB-38E0DF426C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95F38E9F-8CF2-4C0D-A7BD-B355CAFC3F81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95F38E9F-8CF2-4C0D-A7BD-B355CAFC3F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95F38E9F-8CF2-4C0D-A7BD-B355CAFC3F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95F38E9F-8CF2-4C0D-A7BD-B355CAFC3F81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47152548-A9EB-4114-99A9-3E8A33DF3DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47152548-A9EB-4114-99A9-3E8A33DF3DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47152548-A9EB-4114-99A9-3E8A33DF3DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47152548-A9EB-4114-99A9-3E8A33DF3DB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D78F4268-AFE0-4595-8D74-434767924946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D78F4268-AFE0-4595-8D74-434767924946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D78F4268-AFE0-4595-8D74-434767924946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D78F4268-AFE0-4595-8D74-434767924946}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
