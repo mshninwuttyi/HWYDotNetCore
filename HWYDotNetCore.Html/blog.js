@@ -2,30 +2,30 @@ const tblBlog = "blogs";
 let blogId = null;
 
 getBlogTable();
-// readBlog();
+//testConfirmMessage();
+//readBlog();
 //createBlog();
 // updateBlog("97aedec8-c6e9-48da-8728-3ee9604c9435","adfdsfds","dasfdade","dafdafdsdfsd");
 // deleteBlog("97aedec8-c6e9-48da-8728-3ee9604c9435");
+
 
 function readBlog() {
     const blogs = getBlogs();
     console.log(blogs);
 }
 
-function editBlog(id)
-{
-    let lst =  getBlogs();
-    const items = lst.filter(x=>x.id === id);
+function editBlog(id) {
+    let lst = getBlogs();
+    const items = lst.filter(x => x.id === id);
     console.log(items);
     console.log(items.length);
-    if(items.length == 0)
-    {
+    if (items.length == 0) {
         console.log("no data found.");
         errorMessge("No data found");
         return;
     }
     // return items[0];
-    let item =  items[0];
+    let item = items[0];
     blogId = item.id;
     $('#txtTitle').val(item.title);
     $('#txtAuthor').val(item.author);
@@ -36,12 +36,12 @@ function editBlog(id)
 
 }
 
-function createBlog(title,author,content) {
-    let lst =  getBlogs();
+function createBlog(title, author, content) {
+    let lst = getBlogs();
     const requestModel = {
-        id : uuidv4(),
+        id: uuidv4(),
         title: title,
-        author: author, 
+        author: author,
         content: content
     };
     lst.push(requestModel);
@@ -49,16 +49,14 @@ function createBlog(title,author,content) {
     localStorage.setItem(tblBlog, jsonBlog);
     successMessage("Saving Successful.");
     clearControls();
-}  
+}
 
-function updateBlog(id,title,author,content)
-{
-    let lst =  getBlogs();
-    const items = lst.filter(x=>x.id === id);
+function updateBlog(id, title, author, content) {
+    let lst = getBlogs();
+    const items = lst.filter(x => x.id === id);
     console.log(items);
     console.log(items.length);
-    if(items.length == 0)
-    {
+    if (items.length == 0) {
         console.log("no data found.");
         errorMessge("No data found");
         return;
@@ -66,17 +64,17 @@ function updateBlog(id,title,author,content)
 
     const item = items[0];
     item.title = title;
-    item.author= author;
+    item.author = author;
     item.content = content;
 
-    const index = lst.findIndex(x=>x.id ===id);
+    const index = lst.findIndex(x => x.id === id);
     lst[index] = item;
     const jsonBlog = JSON.stringify(lst);
     localStorage.setItem(tblBlog, jsonBlog);
     successMessage("Updating Successful.");
 }
 
-function deleteBlog(id)
+function deleteBlog3(id)
 {
     let result = confirm("Are you sure want to delete.");
     if(!result) return;
@@ -96,14 +94,58 @@ function deleteBlog(id)
     getBlogTable();
 }
 
-function uuidv4() {
-    return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
-      (+c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> +c / 4).toString(16)
-    );
-  }
-  
-  function getBlogs()
-{
+function deleteBlog2(id) {
+    Swal.fire({
+        title: "Confirm",
+        text: "Are you sure want to delete.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes"
+    }).then((result) => {
+        if (!result.isConfirmed) return;
+        let lst = getBlogs();
+        const items = lst.filter(x => x.id === id);
+        if (items.length == 0) {
+            console.log("no data found.");
+            return;
+        }
+
+        lst = lst.filter(x => x.id !== id);
+        const jsonBlog = JSON.stringify(lst);
+        localStorage.setItem(tblBlog, jsonBlog);
+
+        successMessage("Deleting Successful.");
+        getBlogTable();
+
+    });
+}
+
+function deleteBlog(id) {
+    
+        
+        // "Consuming Code" (Must wait for a fulfilled Promise)
+        confirmMessage("Are you sure you want to delete?").then(
+            function(value) { /* code if successful */ 
+                let lst = getBlogs();
+                const items = lst.filter(x => x.id === id);
+                if (items.length == 0) {
+                    console.log("no data found.");
+                    return;
+                }
+        
+                lst = lst.filter(x => x.id !== id);
+                const jsonBlog = JSON.stringify(lst);
+                localStorage.setItem(tblBlog, jsonBlog);
+        
+                successMessage("Deleting Successful.");
+                getBlogTable();
+            }
+          );
+   
+}
+
+
+function getBlogs() {
     const blogs = localStorage.getItem(tblBlog);
     console.log(blogs);
     let lst = [];
@@ -113,34 +155,23 @@ function uuidv4() {
     return lst;
 }
 
-$('#btnSave').click(function(){
+$('#btnSave').click(function () {
     const title = $('#txtTitle').val();
     const author = $('#txtAuthor').val();
     const content = $('#txtContent').val();
 
-    if(blogId === null)
-    {
-        createBlog(title,author,content);
+    if (blogId === null) {
+        createBlog(title, author, content);
     }
-    else{
-        updateBlog(blogId,title,author,content);
+    else {
+        updateBlog(blogId, title, author, content);
         blogId = null;
     }
     getBlogTable();
-    
+
 })
 
-function successMessage(message)
-{
-    alert(message);
-}
-
-function errorMessage(message)
-{
-    alert(message);
-}
-
-function clearControls(){
+function clearControls() {
     $('#txtTitle').val('');
     $('#txtAuthor').val('');
     $('#txtContent').val('');
@@ -148,11 +179,10 @@ function clearControls(){
 
 }
 
-function getBlogTable()
-{
+function getBlogTable() {
     const lst = getBlogs();
     let count = 0;
-    let htmlRows ='';
+    let htmlRows = '';
     lst.forEach(item => {
         const htmlRow = `
          <tr>
@@ -165,7 +195,7 @@ function getBlogTable()
         <td>${item.author}</td>
         <td>${item.content}</td>
       </tr>`;
-      htmlRows += htmlRow;
+        htmlRows += htmlRow;
     });
 
     $('#tbody').html(htmlRows);
