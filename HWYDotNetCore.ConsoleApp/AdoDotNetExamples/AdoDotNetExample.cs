@@ -9,16 +9,22 @@ using System.Reflection.Metadata;
 
 namespace HWYDotNetCore.ConsoleApp.AdoDotNetExamples
 {
-    internal class AdoDotNetExample
+    public class AdoDotNetExample
     {
-        private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
-        {
-            DataSource = "HNINWUTTYI\\MSSQLSERVER2012", //server name
-            InitialCatalog = "HWYDotNetCore", //database name
-            UserID = "sa",
-            Password = "admin123!"
-        };
+        //private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
+        //{
+        //    DataSource = "HNINWUTTYI\\MSSQLSERVER2012", //server name
+        //    InitialCatalog = "HWYDotNetCore", //database name
+        //    UserID = "sa",
+        //    Password = "admin123!"
+        //};
 
+        private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder;
+
+        public AdoDotNetExample(SqlConnectionStringBuilder sqlConnectionStringBuilder)
+        {
+            _sqlConnectionStringBuilder = sqlConnectionStringBuilder;
+        }
 
         public void Read()
         {
