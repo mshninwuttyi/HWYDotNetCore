@@ -8,5 +8,15 @@ namespace HWYDotNetCore.MvcChartApp.Controllers
         {
             return View();
         }
+
+        public IActionResult ZoomAndPlanChart()
+        {
+            return View();
+        }
+
+        public IActionResult ColumnChart()
+        {
+            return View();
+        }
     }
 }
