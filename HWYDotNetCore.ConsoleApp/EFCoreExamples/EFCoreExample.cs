@@ -30,7 +30,6 @@ namespace HWYDotNetCore.ConsoleApp.EFCoreExamples
 
         private void Read()
         {
-
             var lst = db.Blogs.ToList();
             foreach (BlogDto item in lst)
             {
@@ -68,7 +67,6 @@ namespace HWYDotNetCore.ConsoleApp.EFCoreExamples
             int result = db.SaveChanges();
             string message = result > 0 ? "Saving Successful." : "Saving Failed.";
             Console.WriteLine(message);
-
         }
 
         private void Update(int id, string title, string author, string content)
@@ -87,7 +85,6 @@ namespace HWYDotNetCore.ConsoleApp.EFCoreExamples
             int result = db.SaveChanges();
             string message = result > 0 ? "Updating Successful." : "Updating Failed.";
             Console.WriteLine(message);
-
         }
 
         private void Delete(int id)
@@ -103,6 +100,15 @@ namespace HWYDotNetCore.ConsoleApp.EFCoreExamples
 
             string message = result > 0 ? "Deleting Successful." : "Deleting Fail.";
             Console.WriteLine(message);
+        }
+
+        public void Generate(int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                int rowNo = (i + 1);
+                Create("Title" + rowNo, "Author" + rowNo, "Content" + rowNo);
+            }
         }
     }
 }
