@@ -47,8 +47,8 @@ var serviceProvider = new ServiceCollection()
 //var dapperExample = serviceProvider.GetRequiredService<DapperExample>();
 //dapperExample.Run();
 
-//EFCoreExample eFCoreExample = serviceProvider.GetRequiredService<EFCoreExample>();
-//eFCoreExample.Generate(391);
+EFCoreExample eFCoreExample = serviceProvider.GetRequiredService<EFCoreExample>();
+eFCoreExample.Generate(391);
 
 int pageSize = 10;
 AppDbContext db = serviceProvider.GetRequiredService<AppDbContext>();
