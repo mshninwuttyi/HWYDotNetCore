@@ -46,11 +46,7 @@ namespace HWYDotNetCore.WebApi.Controller
                 return BadRequest(new { Message = "Invalid PageNo." });
             }
 
-            var lst = _context
-                .Blogs.OrderByDescending(x => x.BlogId)
-                .Skip((pageNo - 1) * pageSize)
-                .Take(pageSize)
-                .ToList();
+            var lst = _context.Blogs.Skip((pageNo - 1) * pageSize).Take(pageSize).ToList();
 
             BlogResponseModel model = new();
             model.Data = lst;
@@ -81,7 +77,7 @@ namespace HWYDotNetCore.WebApi.Controller
             return Ok(message);
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public IActionResult Update(int id, BlogModel blog)
         {
             var item = _context.Blogs.FirstOrDefault(x => x.BlogId == id);
