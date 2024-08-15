@@ -1,31 +1,27 @@
 ﻿using System.Text;
 using System.Text.Json.Serialization;
+using HWYDotNetCore.MvcApiCall;
 using HWYDotNetCore.MvcApiCall.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using RestSharp;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace HWYDotNetCore.MvcApp.Controllers
+namespace HWYDotNetCore.MvcApiCall.Controllers
 {
     public class BlogController : Controller
     {
-        private readonly HttpClient _httpClient;
+        private readonly IBlogApi _blogApi;
 
-        public BlogController(HttpClient httpClient)
+        public BlogController(IBlogApi blogApi)
         {
-            _httpClient = httpClient;
+            _blogApi = blogApi;
         }
 
         [ActionName("Index")]
         public async Task<IActionResult> BlogIndexAsync(int pageNo = 1, int pageSize = 10)
         {
-            BlogResponseModel model = new BlogResponseModel();
-            var response = await _httpClient.GetAsync($"api/blog/{pageNo}/{pageSize}");
-            if (response.IsSuccessStatusCode)
-            {
-                var jsonStr = await response.Content.ReadAsStringAsync();
-                model = JsonConvert.DeserializeObject<BlogResponseModel>(jsonStr)!;
-            }
+            var model = await _blogApi.GetBlogs(pageNo, pageSize);
             return View("BlogIndex", model);
         }
 
@@ -39,44 +35,28 @@ namespace HWYDotNetCore.MvcApp.Controllers
         [ActionName("Save")]
         public async Task<IActionResult> BlogSave(BlogModel blog)
         {
-            HttpContent content = new StringContent(
-                JsonConvert.SerializeObject(blog),
-                Encoding.UTF8,
-                Application.Json
-            );
-            await _httpClient.PostAsync("api/blog", content);
+            await _blogApi.CreateBlog(blog);
             return Redirect("/Blog");
         }
 
         [ActionName("Edit")]
         public async Task<IActionResult> BlogEditAsync(int id)
         {
-            var response = await _httpClient.GetAsync($"api/blog/{id}")!;
-            if (!response.IsSuccessStatusCode)
-            {
-                return Redirect("/Blog");
-            }
-            var jsonStr = await response.Content.ReadAsStringAsync();
-            BlogModel model = JsonConvert.DeserializeObject<BlogModel>(jsonStr)!;
+            var model = await _blogApi.GetBlog(id);
             return View("BlogEdit", model);
         }
 
         [ActionName("Update")]
         public async Task<IActionResult> BlogUpdate(int id, BlogModel blog)
         {
-            HttpContent content = new StringContent(
-                JsonConvert.SerializeObject(blog),
-                Encoding.UTF8,
-                Application.Json
-            );
-            await _httpClient.PutAsync($"api/blog/{id}", content);
+            await _blogApi.UpdateBlog(id, blog);
             return Redirect("/Blog");
         }
 
         [ActionName("Delete")]
         public async Task<IActionResult> BlogDelete(int id)
         {
-            await _httpClient.DeleteAsync($"api/blog/{id}");
+            await _blogApi.DeleteBlog(id);
             return Redirect("/Blog");
         }
     }

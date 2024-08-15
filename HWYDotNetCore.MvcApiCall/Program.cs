@@ -1,3 +1,7 @@
+using HWYDotNetCore.MvcApiCall;
+using Refit;
+using RestSharp;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +11,13 @@ builder.Services.AddScoped(n => new HttpClient()
 {
     BaseAddress = new Uri(builder.Configuration.GetValue<string>("ApiUrl")!)
 });
+builder
+    .Services.AddRefitClient<IBlogApi>()
+    .ConfigureHttpClient(c =>
+        c.BaseAddress = new Uri(builder.Configuration.GetValue<string>("ApiUrl")!)
+    );
+
+builder.Services.AddScoped(n => new RestClient(builder.Configuration.GetValue<string>("ApiUrl")!));
 
 var app = builder.Build();
 
