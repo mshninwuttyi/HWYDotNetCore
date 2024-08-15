@@ -45,7 +45,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.RealTimeChart
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.WebApi", "HWYDotNetCore.WebApi\HWYDotNetCore.WebApi.csproj", "{23A5751B-9179-45D1-BE4C-82442C0B70C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWYDotNetCore.MvcApiCall", "HWYDotNetCore.MvcApiCall\HWYDotNetCore.MvcApiCall.csproj", "{0E9681BE-3C50-4302-9D1E-5CF7AE5CD3DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.MvcApiCall", "HWYDotNetCore.MvcApiCall\HWYDotNetCore.MvcApiCall.csproj", "{0E9681BE-3C50-4302-9D1E-5CF7AE5CD3DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWYDotNetCore.MinimalApi2", "HWYDotNetCore.MinimalApi2\HWYDotNetCore.MinimalApi2.csproj", "{1BEFECC6-49B9-4390-9D15-0B9293E75328}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,10 @@ Global
 		{0E9681BE-3C50-4302-9D1E-5CF7AE5CD3DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E9681BE-3C50-4302-9D1E-5CF7AE5CD3DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E9681BE-3C50-4302-9D1E-5CF7AE5CD3DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BEFECC6-49B9-4390-9D15-0B9293E75328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BEFECC6-49B9-4390-9D15-0B9293E75328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BEFECC6-49B9-4390-9D15-0B9293E75328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BEFECC6-49B9-4390-9D15-0B9293E75328}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
