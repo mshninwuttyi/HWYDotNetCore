@@ -61,7 +61,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.BlazorWasm", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.MvcApp3", "HWYDotNetCore.MvcApp3\HWYDotNetCore.MvcApp3.csproj", "{F20FEB1B-C3C0-48FA-9366-DC728B3CB038}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWYDotNetCore.BlazorServerApp", "HWYDotNetCore.BlazorServerApp\HWYDotNetCore.BlazorServerApp.csproj", "{C11D16A2-37CB-4A9D-B445-9E5E69CEED22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.BlazorServerApp", "HWYDotNetCore.BlazorServerApp\HWYDotNetCore.BlazorServerApp.csproj", "{C11D16A2-37CB-4A9D-B445-9E5E69CEED22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
