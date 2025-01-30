@@ -27,7 +27,9 @@ namespace HWYDotNetCore.WebApi.Controller
         [HttpGet]
         public IActionResult Read()
         {
-            var lst = _context.Blogs.ToList();
+            var lst = _context.Blogs
+                .OrderByDescending(x=>x.BlogId)
+                .ToList();
             return Ok(lst);
         }
 
