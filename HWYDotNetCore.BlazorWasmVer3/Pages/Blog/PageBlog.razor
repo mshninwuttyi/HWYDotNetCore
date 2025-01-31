@@ -48,7 +48,7 @@
                 <tr>
                     <td>
                         <button type="button" class="btn btn-warning" @onclick="() => Edit(item.BlogId)">Edit</button>
-                        @* <button type="button" class="btn btn-danger" @onclick="() => Delete(item.BlogId)">Delete</button> *@
+                        <button type="button" class="btn btn-danger" @onclick="() => Delete(item.BlogId)">Delete</button>
                     </td>
                     <td>@(++count)</td>
                     <td>@item.BlogId</td>
@@ -118,6 +118,20 @@
         {
             var json = await response.Content.ReadAsStringAsync();
             requestModel = JsonConvert.DeserializeObject<BlogModel>(json)!;
+        }
+    }
+
+    private async Task Delete(int id)
+    {
+        var result = await JsRuntime.InvokeAsync<bool>("confirm", "Are you sure want to delete?");
+        if (!result) return;
+
+        var response = await HttpClient.DeleteAsync($"{apiEndpoint}/{id}");
+        if(response.IsSuccessStatusCode)
+        {
+            var message = await response.Content.ReadAsStringAsync();
+            await JsRuntime.InvokeVoidAsync("alert", message);
+            await List();
         }
     }
 
