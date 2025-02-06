@@ -67,7 +67,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.BlazorWasmVer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.BlazorWasmVer3", "HWYDotNetCore.BlazorWasmVer3\HWYDotNetCore.BlazorWasmVer3.csproj", "{DC985ABD-12CF-410E-AAF8-D7DDA9BC2274}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWYDotNetCore.LoginAppV2", "HWYDotNetCore.LoginAppV2\HWYDotNetCore.LoginAppV2.csproj", "{F7560378-47DD-45F2-96B9-56C130C14EE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HWYDotNetCore.LoginAppV2", "HWYDotNetCore.LoginAppV2\HWYDotNetCore.LoginAppV2.csproj", "{F7560378-47DD-45F2-96B9-56C130C14EE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HWYDotNetCore.MiddlewareApp", "HWYDotNetCore.MiddlewareApp\HWYDotNetCore.MiddlewareApp.csproj", "{F6FFF5ED-937B-40E1-9483-FC9B4A6CDE68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -207,6 +209,10 @@ Global
 		{F7560378-47DD-45F2-96B9-56C130C14EE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7560378-47DD-45F2-96B9-56C130C14EE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7560378-47DD-45F2-96B9-56C130C14EE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6FFF5ED-937B-40E1-9483-FC9B4A6CDE68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6FFF5ED-937B-40E1-9483-FC9B4A6CDE68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6FFF5ED-937B-40E1-9483-FC9B4A6CDE68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6FFF5ED-937B-40E1-9483-FC9B4A6CDE68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
