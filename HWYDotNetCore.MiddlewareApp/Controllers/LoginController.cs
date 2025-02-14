@@ -8,6 +8,12 @@ namespace HWYDotNetCore.MiddlewareApp.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Index(LoginModel requestModel)
+        {
+            return View();
+        }
     }
 
     public class LoginModel
