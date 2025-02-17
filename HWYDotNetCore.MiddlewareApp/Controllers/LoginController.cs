@@ -12,7 +12,8 @@ namespace HWYDotNetCore.MiddlewareApp.Controllers
         [HttpPost]
         public IActionResult Index(LoginModel requestModel)
         {
-            return View();
+            HttpContext.Session.SetString("name", requestModel.UserName);
+            return Redirect("/Home");
         }
     }
 
